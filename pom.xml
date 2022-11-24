@@ -13,7 +13,7 @@
 
     <groupId>com.happy-space</groupId>
     <artifactId>happy-space</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>happy-space</name>
     <packaging>pom</packaging>
 
@@ -83,7 +83,7 @@
     </dependencyManagement>
 
     <modules>
-        <!--        <module>log-converter-commons</module>-->
+        <module>bookServer</module>
         <!--        <module>log-converter-register</module>-->
         <!--        <module>log-converter-receiver</module>-->
     </modules>
