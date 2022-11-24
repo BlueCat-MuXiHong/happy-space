@@ -90,19 +90,13 @@
 
     <profiles>
         <profile>
-            <id>local</id>
+            <id>dev</id>
             <properties>
-                <spring.profile>local</spring.profile>
+                <spring.profile>dev</spring.profile>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-        </profile>
-        <profile>
-            <id>test</id>
-            <properties>
-                <spring.profile>test</spring.profile>
-            </properties>
         </profile>
         <profile>
             <id>prod</id>
@@ -110,11 +104,5 @@
                 <spring.profile>prod</spring.profile>
             </properties>
         </profile>
-        <!--        <profile>-->
-        <!--            <id>bmj</id>-->
-        <!--            <properties>-->
-        <!--                <spring.profile>bmj</spring.profile>-->
-        <!--            </properties>-->
-        <!--        </profile>-->
     </profiles>
 </project>
