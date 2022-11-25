@@ -32,7 +32,7 @@ public class BookInfoService {
         return bookInfoDao.insertBookInfoList(bookInfos);
     }
     
-    public BookInfo getBookInfoById(String bookId){
+    public BookInfo getBookInfoById(Integer bookId){
         return bookInfoDao.getBookInfoById(bookId);
     }
     

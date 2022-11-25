@@ -6,12 +6,26 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+/**
+ * 图书信息类
+ */
 @Mapper
 public interface BookInfoDao {
 
+
+    /**
+     * 插入图书
+     * @param bookInfo
+     * @return
+     */
     @Insert("INSERT INTO book_info(book_name,book_author,book_type,book_title,book_url,book_img_url)VALUES(#{book_name},#{book_author},#{book_type},#{book_title},#{book_url},#{book_img_url});")
     Integer insertBookInfo(BookInfo bookInfo);
 
+    /**
+     * 批量插入图书
+     * @param bookInfos
+     * @return
+     */
     @Insert("<script>" +
             "replace into book_info (book_name,book_author,book_type,book_title,book_url,book_img_url)"
             + "values"
@@ -21,12 +35,21 @@ public interface BookInfoDao {
             + "</script>")
     Integer insertBookInfoList(@Param("bookInfos") List<BookInfo> bookInfos);
 
+    /**
+     * 根据图书id获取图书
+     * @param bookId
+     * @return
+     */
     @Select("SELECT book_id,book_name,book_author,book_type,book_title,book_url,book_img_url FROM book_info WHERE book_id = #{bookId};")
-    BookInfo getBookInfoById(@Param("bookId") String bookId);
+    BookInfo getBookInfoById(@Param("bookId") Integer bookId);
 
     @Select("SELECT book_id,book_name,book_author,book_type,book_title,book_url,book_img_url FROM book_info WHERE book_name LIKE #{bookName};")
     List<BookInfo> getBookInfoByName(@Param("bookName") String bookName);
 
+    /**
+     * 获取全部的图书
+     * @return
+     */
     @Results(value = {
             @Result(property = "book_id", column = "book_id"),
             @Result(property = "book_type", column = "book_type"),
@@ -39,6 +62,12 @@ public interface BookInfoDao {
     @Select("SELECT book_id,book_name,book_author,book_type,book_title,book_url,book_img_url FROM book_info ORDER BY book_id asc")
     List<BookInfo> getAllBookInfo();
 
+
+    /**
+     * 根据图书类型获取图书
+     * @param bookType
+     * @return
+     */
     @Results(value = {
             @Result(property = "book_id", column = "book_id"),
             @Result(property = "book_type", column = "book_type"),

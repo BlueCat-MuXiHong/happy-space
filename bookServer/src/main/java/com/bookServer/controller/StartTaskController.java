@@ -19,15 +19,15 @@ public class StartTaskController {
     }
 
 
-    @GetMapping("bookChapterTask")
-    public void bookChapterTask() throws Exception {
-        task.bookChapterTask();
-    }
+//    @GetMapping("bookChapterTask")
+//    public void bookChapterTask() throws Exception {
+//        task.bookChapterTask();
+//    }
 
-    @GetMapping("bookContentTask")
-    public void bookContentTask() throws Exception {
-        task.insertEsBookContent();
-    }
+//    @GetMapping("bookContentTask")
+//    public void bookContentTask() throws Exception {
+//        task.insertEsBookContent();
+//    }
 
 
 
