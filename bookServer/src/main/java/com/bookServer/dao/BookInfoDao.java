@@ -43,8 +43,31 @@ public interface BookInfoDao {
     @Select("SELECT book_id,book_name,book_author,book_type,book_title,book_url,book_img_url FROM book_info WHERE book_id = #{bookId};")
     BookInfo getBookInfoById(@Param("bookId") Integer bookId);
 
+    /**
+     * 根据书名获取数据库
+     * @param bookName
+     * @return
+     */
     @Select("SELECT book_id,book_name,book_author,book_type,book_title,book_url,book_img_url FROM book_info WHERE book_name LIKE #{bookName};")
     List<BookInfo> getBookInfoByName(@Param("bookName") String bookName);
+
+    /**
+     * 根据书地址获取图书
+     * @param book_url
+     * @return
+     */
+    @Results(value = {
+            @Result(property = "book_id", column = "book_id"),
+            @Result(property = "book_type", column = "book_type"),
+            @Result(property = "book_url", column = "book_url"),
+            @Result(property = "book_name", column = "book_name"),
+            @Result(property = "book_author", column = "book_author"),
+            @Result(property = "book_title", column = "book_title"),
+            @Result(property = "book_img_url", column = "book_img_url")
+    })
+    @Select("SELECT book_id,book_name,book_author,book_type,book_title,book_url,book_img_url FROM book_info WHERE book_url = #{book_url};")
+    BookInfo getBookInfoByUrl(@Param("book_url") String book_url);
+
 
     /**
      * 获取全部的图书

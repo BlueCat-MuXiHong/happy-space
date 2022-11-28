@@ -48,6 +48,10 @@ public class BookInfoService {
         return bookInfoDao.getAllBookModel(bookType);
     }
 
+    public BookInfo getBookInfoByUrl(String bookUrl){
+        return bookInfoDao.getBookInfoByUrl(bookUrl);
+    }
+
 
     /**
      * 每个类型的图书根地址
@@ -69,6 +73,13 @@ public class BookInfoService {
         return allPageUrl;
     }
 
+    /**
+     * 图书信息写入数据库
+     * @param baseUrl 根地址
+     * @param url
+     * @return
+     * @throws UnsupportedEncodingException
+     */
     @Async("test")
     public Integer getBookInfosByUrl(String baseUrl,String url) throws UnsupportedEncodingException {
         log.info(url);
@@ -76,16 +87,20 @@ public class BookInfoService {
         try {
             document = Jsoup.parse(new URL(url), 5000);
         }catch(Exception e){
-            System.out.println("执行到这里");
+            System.out.println("解析图书信息错误，正在重试。。。");
             getBookInfosByUrl(baseUrl,url);
             return null;
         }
         List<BookInfo> bookInfoList = new ArrayList<>();
         Elements media = document.getElementsByClass("media");
         for (Element element : media) {
-            String imgUrl = element.getElementsByClass("media-left media-heading").get(0).getElementsByTag("a").get(0).getElementsByTag("img").get(0).attr("src");
             String bookUrl = element.getElementsByClass("media-heading book-title").get(0).getElementsByTag("a").get(0).attr("href");
-
+            BookInfo bookInfoByUrl = this.getBookInfoByUrl(baseUrl + bookUrl);
+            if (this.getBookInfoByUrl(baseUrl+bookUrl)!=null) {
+                log.info("图书："+bookUrl+"->已存在.");
+                continue;
+            }
+            String imgUrl = element.getElementsByClass("media-left media-heading").get(0).getElementsByTag("a").get(0).getElementsByTag("img").get(0).attr("src");
             String bookName =  element.getElementsByClass("media-heading book-title").get(0).getElementsByTag("a").get(0).text();
             String author =  element.getElementsByClass("book_author").get(0).getElementsByTag("a").get(0).text();
             String title = "";
