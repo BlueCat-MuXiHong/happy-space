@@ -24,7 +24,7 @@ public class BookServerApplication {
     @Bean
     public TaskScheduler taskScheduler() {
         ThreadPoolTaskScheduler taskExecutor = new ThreadPoolTaskScheduler();
-        taskExecutor.setPoolSize(20);
+        taskExecutor.setPoolSize(60);
         return taskExecutor;
     }
 

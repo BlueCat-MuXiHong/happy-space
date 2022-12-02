@@ -1,8 +1,9 @@
 package com.bookServer.dao;
 
-import com.bookServer.entity.BookInfo;
-import com.bookServer.entity.model.BookForChapterModel;
+import com.commons.bookServer.entity.BookInfo;
+import com.commons.bookServer.entity.model.BookForChapterModel;
 import org.apache.ibatis.annotations.*;
+import org.apache.kafka.common.protocol.types.Field;
 
 import java.util.List;
 
@@ -40,8 +41,16 @@ public interface BookInfoDao {
      * @param bookId
      * @return
      */
-    @Select("SELECT book_id,book_name,book_author,book_type,book_title,book_url,book_img_url FROM book_info WHERE book_id = #{bookId};")
+    @SelectProvider(method = "getBookInfoById",type = BookInfoDaoSql.class)
     BookInfo getBookInfoById(@Param("bookId") Integer bookId);
+
+    class BookInfoDaoSql{
+        public String getBookInfoById(@Param("bookId") Integer bookId){
+            StringBuilder sql = new StringBuilder("SELECT `book_id`,`book_name`,`book_author`,`book_type`,`book_title`,`book_url`,`book_img_url` FROM book_info WHERE book_id = #{bookId};");
+            System.out.printf(sql.toString());
+            return sql.toString();
+        }
+    }
 
     /**
      * 根据书名获取数据库

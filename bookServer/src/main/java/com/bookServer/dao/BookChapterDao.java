@@ -1,7 +1,7 @@
 package com.bookServer.dao;
 
-import com.bookServer.entity.BookChapter;
-import com.bookServer.entity.model.BookForChapterModel;
+import com.commons.bookServer.entity.BookChapter;
+import com.commons.bookServer.entity.model.BookForChapterModel;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -108,7 +108,7 @@ public interface BookChapterDao {
             + "</script>")
     Integer insertBookChapter7(@Param("bookChapters") List<BookChapter> bookChapters);
     @Insert("<script>" +
-            "replace into book_8_chapter (book_id,book_chapter_name,book_chapter_ip)"
+            "replace into bookchapterqita (book_id,book_chapter_name,book_chapter_ip)"
             + "values"
             + "<foreach collection =\"bookChapters\" item=\"item\" index= \"index\" separator =\",\"> "
             + "(#{item.book_id},#{item.book_chapter_name},#{item.book_chapter_ip})"

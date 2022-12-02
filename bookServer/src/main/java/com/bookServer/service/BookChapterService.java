@@ -1,10 +1,9 @@
 package com.bookServer.service;
 
 import com.bookServer.dao.BookChapterDao;
-import com.bookServer.dao.BookChapterDao;
-import com.bookServer.entity.BookChapter;
-import com.bookServer.entity.BookInfo;
-import com.bookServer.entity.model.BookForChapterModel;
+import com.commons.bookServer.entity.BookChapter;
+import com.commons.bookServer.entity.BookInfo;
+import com.commons.bookServer.entity.model.BookForChapterModel;
 import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -60,7 +59,7 @@ public class BookChapterService {
      * @param bookForChapterModel
      * @return
      */
-    @Async("test")
+    @Async("test1")
     public Integer getBookChapterByUrl(String baseUrl,BookForChapterModel bookForChapterModel){
         Document document = null;
         try {

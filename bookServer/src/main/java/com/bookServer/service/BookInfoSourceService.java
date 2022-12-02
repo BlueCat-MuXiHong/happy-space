@@ -1,8 +1,8 @@
 package com.bookServer.service;
 
 import com.bookServer.dao.BookInfoDao;
-import com.bookServer.entity.BookInfo;
-import com.bookServer.entity.model.BookForChapterModel;
+import com.commons.bookServer.entity.BookInfo;
+import com.commons.bookServer.entity.model.BookForChapterModel;
 import com.bookServer.util.BaseHtmlParse;
 import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;
@@ -20,7 +20,7 @@ import java.util.List;
 
 @Log4j2
 @Service
-public class BookInfoService {
+public class BookInfoSourceService {
     @Autowired
     private BookInfoDao bookInfoDao;
 
@@ -95,11 +95,11 @@ public class BookInfoService {
         Elements media = document.getElementsByClass("media");
         for (Element element : media) {
             String bookUrl = element.getElementsByClass("media-heading book-title").get(0).getElementsByTag("a").get(0).attr("href");
-            BookInfo bookInfoByUrl = this.getBookInfoByUrl(baseUrl + bookUrl);
-            if (this.getBookInfoByUrl(baseUrl+bookUrl)!=null) {
-                log.info("图书："+bookUrl+"->已存在.");
-                continue;
-            }
+//            BookInfo bookInfoByUrl = this.getBookInfoByUrl(baseUrl + bookUrl);
+//            if (this.getBookInfoByUrl(baseUrl+bookUrl)!=null) {
+//                log.info("图书："+bookUrl+"->已存在.");
+//                continue;
+//            }
             String imgUrl = element.getElementsByClass("media-left media-heading").get(0).getElementsByTag("a").get(0).getElementsByTag("img").get(0).attr("src");
             String bookName =  element.getElementsByClass("media-heading book-title").get(0).getElementsByTag("a").get(0).text();
             String author =  element.getElementsByClass("book_author").get(0).getElementsByTag("a").get(0).text();

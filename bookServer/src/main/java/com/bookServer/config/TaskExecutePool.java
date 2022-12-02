@@ -26,4 +26,18 @@ public class TaskExecutePool {
         executor.initialize();
         return executor;
     }
+
+
+    @Bean("test1")
+    public Executor myTaskAsyncPool1() {
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        executor.setCorePoolSize(15); //核心线程数
+        executor.setMaxPoolSize(30);  //最大线程数
+        executor.setQueueCapacity(30); //队列大小
+        executor.setKeepAliveSeconds(60); //线程最大空闲时间
+        executor.setThreadNamePrefix("async-Executor-"); //指定用于新创建的线程名称的前缀。
+        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy()); // 拒绝策略（一共四种，此处省略）
+        executor.initialize();
+        return executor;
+    }
 }

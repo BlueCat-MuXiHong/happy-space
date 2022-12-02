@@ -1,11 +1,10 @@
 package com.bookServer.task;
 
-import com.bookServer.entity.model.BookForChapterModel;
+import com.bookServer.service.BookInfoSourceService;
+import com.commons.bookServer.entity.model.BookForChapterModel;
 import com.bookServer.service.BookChapterService;
-import com.bookServer.service.BookInfoService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -26,7 +25,7 @@ public class Task {
     public static final String baseUrl = "http://www.kuaishuku.com";
 
     @Autowired
-    private BookInfoService bookInfoService;
+    private BookInfoSourceService bookInfoService;
 
     @Autowired
     private BookChapterService bookChapterService;
@@ -34,10 +33,10 @@ public class Task {
 //    @Autowired
 //    private BookContentService bookContentService;
 
-    @Scheduled(cron = "*/2 * * * * ?")
+//    @Scheduled(cron = "*/2 * * * * ?")
     public void bookInfoTask() throws Exception {
         List<String> urls = new ArrayList<>();
-//        urls.add(url1);
+        urls.add(url1);
 //        urls.add(url2);
 //        urls.add(url3);
 //        urls.add(url4);
@@ -61,7 +60,7 @@ public class Task {
 //        List<BookForChapterModel> allBookModel5 = bookInfoService.getAllBookModel(5);
 //        List<BookForChapterModel> allBookModel6 = bookInfoService.getAllBookModel(6);
 //        List<BookForChapterModel> allBookModel7 = bookInfoService.getAllBookModel(7);
-//        List<BookForChapterModel> allBookModel8 = bookInfoService.getAllBookModel(8);
+        List<BookForChapterModel> allBookModel8 = bookInfoService.getAllBookModel(8);
         List<List<BookForChapterModel>> allBookModels = new ArrayList<>();
         allBookModels.add(allBookModel1);
 //        allBookModels.add(allBookModel2);
@@ -70,7 +69,7 @@ public class Task {
 //        allBookModels.add(allBookModel5);
 //        allBookModels.add(allBookModel6);
 //        allBookModels.add(allBookModel7);
-//        allBookModels.add(allBookModel8);
+        allBookModels.add(allBookModel8);
 
 
         int i = 0;

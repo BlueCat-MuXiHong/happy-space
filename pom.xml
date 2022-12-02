@@ -50,11 +50,11 @@
             <!--                <version>${project.version}</version>-->
             <!--            </dependency>-->
 
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>3.5.1</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.baomidou</groupId>-->
+<!--                <artifactId>mybatis-plus-boot-starter</artifactId>-->
+<!--                <version>3.5.1</version>-->
+<!--            </dependency>-->
 
 <!--            <dependency>-->
 <!--                <groupId>com.alibaba</groupId>-->
@@ -84,6 +84,7 @@
 
     <modules>
         <module>bookServer</module>
+        <module>commons</module>
         <!--        <module>log-converter-register</module>-->
         <!--        <module>log-converter-receiver</module>-->
     </modules>

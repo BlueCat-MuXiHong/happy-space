@@ -13,21 +13,28 @@ public class StartTaskController {
     @Autowired
     private Task task;
 
+    /**
+     * 添加图书
+     * @throws Exception
+     */
     @GetMapping("bookInfoTask")
     public void bookInfoTask() throws Exception {
         task.bookInfoTask();
     }
 
+    /**
+     * 添加图书
+     * @throws Exception
+     */
+    @GetMapping("bookChapterTask")
+    public void bookChapterTask() throws Exception {
+        task.bookChapterTask();
+    }
 
-//    @GetMapping("bookChapterTask")
-//    public void bookChapterTask() throws Exception {
-//        task.bookChapterTask();
-//    }
-
-//    @GetMapping("bookContentTask")
-//    public void bookContentTask() throws Exception {
-//        task.insertEsBookContent();
-//    }
+    @GetMapping("bookContentTask")
+    public void bookContentTask() throws Exception {
+        task.bookChapterTask();
+    }
 
 
 
