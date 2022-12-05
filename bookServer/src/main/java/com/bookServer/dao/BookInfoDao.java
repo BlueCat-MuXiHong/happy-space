@@ -2,7 +2,10 @@ package com.bookServer.dao;
 
 import com.commons.bookServer.entity.BookInfo;
 import com.commons.bookServer.entity.model.BookForChapterModel;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.annotations.Param;
 import org.apache.kafka.common.protocol.types.Field;
 
 import java.util.List;
@@ -58,15 +61,6 @@ public interface BookInfoDao {
      * @param book_url
      * @return
      */
-    @Results(value = {
-            @Result(property = "book_id", column = "book_id"),
-            @Result(property = "book_type", column = "book_type"),
-            @Result(property = "book_url", column = "book_url"),
-            @Result(property = "book_name", column = "book_name"),
-            @Result(property = "book_author", column = "book_author"),
-            @Result(property = "book_title", column = "book_title"),
-            @Result(property = "book_img_url", column = "book_img_url")
-    })
     @Select("SELECT book_id,book_name,book_author,book_type,book_title,book_url,book_img_url FROM book_info WHERE book_url = #{book_url};")
     BookInfo getBookInfoByUrl(@Param("book_url") String book_url);
 
@@ -75,15 +69,7 @@ public interface BookInfoDao {
      * 获取全部的图书
      * @return
      */
-    @Results(value = {
-            @Result(property = "book_id", column = "book_id"),
-            @Result(property = "book_type", column = "book_type"),
-            @Result(property = "book_url", column = "book_url"),
-            @Result(property = "book_name", column = "book_name"),
-            @Result(property = "book_author", column = "book_author"),
-            @Result(property = "book_title", column = "book_title"),
-            @Result(property = "book_img_url", column = "book_img_url")
-    })
+
     @Select("SELECT book_id,book_name,book_author,book_type,book_title,book_url,book_img_url FROM book_info ORDER BY book_id asc")
     List<BookInfo> getAllBookInfo();
 
@@ -93,12 +79,9 @@ public interface BookInfoDao {
      * @param bookType
      * @return
      */
-    @Results(value = {
-            @Result(property = "book_id", column = "book_id"),
-            @Result(property = "book_type", column = "book_type"),
-            @Result(property = "book_url", column = "book_url"),
-    })
     @Select("SELECT book_id,book_type,book_url FROM book_info where book_type = #{bookType};")
     List<BookForChapterModel> getAllBookModel(@Param("bookType") Integer bookType);
 
+    @Select("SELECT book_name,book_author,book_type,book_title,book_url,book_img_url FROM book_info where book_type=#{bookType}")
+    Page<BookInfo> getBookInfoListByBookType(@Param("bookType") Integer bookType);
 }

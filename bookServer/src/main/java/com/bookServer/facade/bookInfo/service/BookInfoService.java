@@ -2,6 +2,9 @@ package com.bookServer.facade.bookInfo.service;
 
 import com.bookServer.dao.BookInfoDao;
 import com.commons.bookServer.entity.BookInfo;
+import com.commons.bookServer.entity.common.PageInfo;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -13,15 +16,25 @@ public class BookInfoService {
     private BookInfoDao bookInfoDao;
 
     /**
-     * 根据图书id获取图书
+     * 根据图书id获取图书信息
      * @param bookId
      * @return
      */
     public BookInfo getBookById(Integer bookId) {
-        System.out.println("参数bookId："+bookId);
-        BookInfo bookInfoById = bookInfoDao.getBookInfoById(bookId);
-        System.out.println(bookInfoById);
-        return bookInfoById;
+        return bookInfoDao.getBookInfoById(bookId);
+    }
+
+    /**
+     *
+     * @param bookType
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
+    public PageInfo<BookInfo> getBookInfoList(Integer bookType, Integer pageNo, Integer pageSize){
+        PageHelper.startPage(pageNo, pageSize);
+        Page<BookInfo> bookInfoListByBookType = bookInfoDao.getBookInfoListByBookType(bookType);
+        return new PageInfo<>(bookInfoListByBookType);
     }
 
 

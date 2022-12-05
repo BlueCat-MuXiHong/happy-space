@@ -16,12 +16,6 @@ public interface BookChapterDao {
 
 
 
-    @Results(value = {
-            @Result(property = "id", column = "id"),
-            @Result(property = "book_id", column = "book_id"),
-            @Result(property = "book_chapter_name", column = "book_chapter_name"),
-            @Result(property = "book_chapter_ip", column = "book_chapter_ip")
-    })
     @Select("SELECT id,book_id,book_chapter_name,book_chapter_ip FROM book_1_chapter WHERE book_id = #{bookId}")
     List<BookChapter> getChapterByBookId1(@Param("bookId") Integer bookId);
 
