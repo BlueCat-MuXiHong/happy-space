@@ -5,6 +5,7 @@ import com.commons.bookServer.entity.BookInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class BookInfoService {
@@ -17,6 +18,7 @@ public class BookInfoService {
      * @return
      */
     public BookInfo getBookById(Integer bookId) {
+        System.out.println("参数bookId："+bookId);
         BookInfo bookInfoById = bookInfoDao.getBookInfoById(bookId);
         System.out.println(bookInfoById);
         return bookInfoById;

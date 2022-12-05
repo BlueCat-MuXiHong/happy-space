@@ -117,21 +117,21 @@ public class BookChapterService {
 //        System.out.println(bookInfo);
         switch (bookInfo.getBook_type()){
             case 1:
-                return bookChapterDao.getChapterByBookId1(bookInfo.getBook_id());
-            case 2:
-                return bookChapterDao.getChapterByBookId2(bookInfo.getBook_id());
-            case 3:
-                return bookChapterDao.getChapterByBookId3(bookInfo.getBook_id());
-            case 4:
-                return bookChapterDao.getChapterByBookId4(bookInfo.getBook_id());
-            case 5:
-                return bookChapterDao.getChapterByBookId5(bookInfo.getBook_id());
-            case 6:
-                return bookChapterDao.getChapterByBookId6(bookInfo.getBook_id());
-            case 7:
-                return bookChapterDao.getChapterByBookId7(bookInfo.getBook_id());
-            case 8:
-                return bookChapterDao.getChapterByBookId8(bookInfo.getBook_id());
+//                return bookChapterDao.getChapterByBookId1(bookInfo.getBook_id());
+//            case 2:
+//                return bookChapterDao.getChapterByBookId2(bookInfo.getBook_id());
+//            case 3:
+//                return bookChapterDao.getChapterByBookId3(bookInfo.getBook_id());
+//            case 4:
+//                return bookChapterDao.getChapterByBookId4(bookInfo.getBook_id());
+//            case 5:
+//                return bookChapterDao.getChapterByBookId5(bookInfo.getBook_id());
+//            case 6:
+//                return bookChapterDao.getChapterByBookId6(bookInfo.getBook_id());
+//            case 7:
+//                return bookChapterDao.getChapterByBookId7(bookInfo.getBook_id());
+//            case 8:
+//                return bookChapterDao.getChapterByBookId8(bookInfo.getBook_id());
         }
         return null;
     }

@@ -41,16 +41,9 @@ public interface BookInfoDao {
      * @param bookId
      * @return
      */
-    @SelectProvider(method = "getBookInfoById",type = BookInfoDaoSql.class)
+    @Select("SELECT `book_id`,`book_name`,`book_author`,`book_type`,`book_title`,`book_url`,`book_img_url` FROM book_info WHERE book_id=#{bookId}")
     BookInfo getBookInfoById(@Param("bookId") Integer bookId);
 
-    class BookInfoDaoSql{
-        public String getBookInfoById(@Param("bookId") Integer bookId){
-            StringBuilder sql = new StringBuilder("SELECT `book_id`,`book_name`,`book_author`,`book_type`,`book_title`,`book_url`,`book_img_url` FROM book_info WHERE book_id = #{bookId};");
-            System.out.printf(sql.toString());
-            return sql.toString();
-        }
-    }
 
     /**
      * 根据书名获取数据库
