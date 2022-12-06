@@ -1,9 +1,9 @@
-package com.bookServer.service;
+package com.bookServer.source.service;
 
 import com.alibaba.fastjson.JSON;
-import com.commons.bookServer.entity.BookChapter;
-import com.commons.bookServer.entity.BookContent;
-import com.commons.bookServer.entity.BookInfo;
+import com.commons.bookServer.entity.bookChapter.BookChapter;
+import com.commons.bookServer.entity.bookContent.BookContent;
+import com.commons.bookServer.entity.bookInfo.BookInfo;
 import lombok.extern.log4j.Log4j2;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;

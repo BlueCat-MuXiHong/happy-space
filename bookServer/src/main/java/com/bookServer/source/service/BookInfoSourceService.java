@@ -1,8 +1,8 @@
-package com.bookServer.service;
+package com.bookServer.source.service;
 
-import com.bookServer.dao.BookInfoDao;
-import com.commons.bookServer.entity.BookInfo;
-import com.commons.bookServer.entity.model.BookForChapterModel;
+import com.bookServer.source.dao.BookInfoDao;
+import com.commons.bookServer.entity.bookInfo.BookInfo;
+import com.commons.bookServer.entity.bookChapter.BookForChapterModel;
 import com.bookServer.util.BaseHtmlParse;
 import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;

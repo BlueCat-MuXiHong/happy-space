@@ -1,7 +1,7 @@
-package com.bookServer.dao;
+package com.bookServer.source.dao;
 
-import com.commons.bookServer.entity.BookChapter;
-import com.commons.bookServer.entity.model.BookForChapterModel;
+import com.commons.bookServer.entity.bookChapter.BookChapter;
+import com.commons.bookServer.entity.bookChapter.BookForChapterModel;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

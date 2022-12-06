@@ -1,0 +1,149 @@
+mysqlIp: 108.108.108.155
+mysqlName: root
+mysqlPassword: Fff123123
+redisHost: 118.118.118.162
+redisPassword: FvW0816p
+esPath: http://118.118.118.162:9200
+esUsername:
+esPassword:
+ossEndpoint: http://118.31.120.147:8090
+
+eventApi: http://118.118.118.162:8098/Report/eventDisposal?event_id=
+
+hostUrl: 118.118.118.162:8099
+
+registerUrl: http://118.118.118.162:8091/thirdPartyCompany/save/
+
+assetsManageUrl: http://118.118.118.162:8098/
+
+logConverterRegister: http://118.118.118.162:8081
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://${mysqlIp}:3306/data-storage?characterEncoding=UTF-8&useUnicode=true&autoReconnect=true&useSSL=false
+    username: ${mysqlName}
+    password: ${mysqlPassword}
+
+  redis:
+    host: ${redisHost}
+    database: 1
+    password: ${redisPassword}
+    port: 6379
+es:
+  path: ${esPath}
+  username: ${esUsername}
+  password: ${esPassword}
+  type: event
+  flow_type: event
+  zjsj_type: event
+
+oss:
+  type: minio
+  region: dats-region
+  endpoint: ${ossEndpoint}
+  bucket: dats
+  accessKey: minioadmin
+  secretKey: minioadmin
+  custom:
+    domain: ${ossEndpoint}
+
+file:
+  url:
+    prefix: ${ossEndpoint}/${oss.bucket}/
+
+event:
+  api: ${eventApi}
+
+host:
+  url: ${hostUrl}
+
+register:
+  url: ${registerUrl}
+
+assets:
+  manage:
+    url: ${assetsManageUrl}
+
+log:
+  converter:
+    register: ${logConverterRegister}
+
+rsa:
+  public:
+    key: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCJKS7+71AHPD68gmz118CyN1VlrJ4mfnkzP+NJmO+frKh65roUepClpge7EpU/vD1u13UtV3xrTRoom5jD1qiW/7Cb8BZrkhOTu3O4oOvOcSMOq9obox6MbpLiM5tTWRkgNYe52HBU98F0pgoP/wAwGGsXg7+37F0UBc9k7FINXQIDAQAB
+
+  private:
+    key: MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAIkpLv7vUAc8PryCbPXXwLI3VWWsniZ+eTM/40mY75+sqHrmuhR6kKWmB7sSlT+8PW7XdS1XfGtNGiibmMPWqJb/sJvwFmuSE5O7c7ig685xIw6r2hujHoxukuIzm1NZGSA1h7nYcFT3wXSmCg//ADAYaxeDv7fsXRQFz2TsUg1dAgMBAAECgYAgygKdGTKleCZ7RCauIrTDJe05UCnChAuPT9+S8YefQVRJhSzIxoAbyXQhqZCaWvLIs6MkgryQni75tDCx6HgGvrcI2yZySr6PNVkIsINXwYrGlTVZDxKflXS1vozy661m1iOSnCoDd5Pte0Z1DZqVtF0F91IJdzvu7KkmNFtidQJBANPTrMFVRof6mKFHwRpxUVPP975ulLRbXM+EAbx9KkgZnCMvZ/sE0hXGPYX6SiQ07Py8I7j6wLPRaQA7jyG0X+MCQQClw3vFB3tDTn7SNMHbBYF2gAGi9Zzaq1n5N8XTo+3OmmUlu+Z7c3Vke6npNX8qnwZGXj5H5tNqU8hLItAhKOG/AkBNjYAAQHJUMoFS+uxN/BLkdo2joOS8q35tU003bzPdtdKeZyrQklFAO5YmyR3/54ikd1U00klfDFo/BY8/rcQ1AkBEWDYWxX/n/1xAtSnccQew4RRLqTLz4cRmAb3aBfPNxFDB3xgnfDJBrM8gbUMyQoDm0IKjSKOQalzhxcfEdEOnAkEAq1fvO1Q4/dZq6jIAN1NCwOQiRng1QgO6GYoH0LYRMzeKr+yLLAEeBgS4WrbbcigzoUZQGsor8pC2Nd85K3EXcA==
+
+#logging:
+#  level:
+#    cn:
+#      com:
+#        cloudpioneer:
+#          lh: info
+#    io:
+#      searchbox:
+#        client: warn
+
+
+#spring:
+#  datasource:
+#    url: jdbc:mysql://47.110.135.40:3306/date_storage?characterEncoding=UTF-8&useUnicode=true&autoReconnect=true&useSSL=false
+#    username: root
+#    password: ONF#a!V3PM
+#
+#  redis:
+#    host: 61.243.11.10
+#    database: 1
+#    password: ec86bbbbdf3b4e0ca45a569cc77b44e5
+#    port: 7777
+#
+#es:
+#  path: http://118.31.120.147:9200
+#  username:
+#  password:
+#  type: event
+#
+#oss:
+#  type: minio
+#  region: dats-region
+#  endpoint: http://118.31.120.147:8090
+#  bucket: court-project-manage
+#  accessKey: minioadmin
+#  secretKey: minioadmin
+#  custom:
+#    domain: http://118.31.120.147:8090
+#
+#file:
+#  url:
+#    prefix: http://118.31.120.147:8090/court-project-manage/court/
+#
+#event:
+#  api: http://118.31.120.147:8098/Report/eventDisposal?event_id=
+#
+#host:
+#  url: 118.31.120.147:8099
+#
+#register:
+#  url: http://127.0.0.1:8091/thirdPartyCompany/save/
+#
+#assets:
+#  manage:
+#    url: http://118.31.120.147:8098/
+#
+#logging:
+#  level:
+#    cn:
+#      com:
+#        cloudpioneer:
+#          lh: debug
+#logging:
+#  config: classpath:logback-config.xml
+#  level:
+#    io:
+#      searchbox:
+#        client: warn
+#    io:
+#      searchbox:
+#        client: warn

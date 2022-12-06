@@ -1,14 +1,13 @@
 package com.bookServer.facade.bookInfo.service;
 
-import com.bookServer.dao.BookInfoDao;
-import com.commons.bookServer.entity.BookInfo;
+import com.bookServer.source.dao.BookInfoDao;
+import com.commons.bookServer.entity.bookInfo.BookInfo;
 import com.commons.bookServer.entity.common.PageInfo;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @Service
 public class BookInfoService {

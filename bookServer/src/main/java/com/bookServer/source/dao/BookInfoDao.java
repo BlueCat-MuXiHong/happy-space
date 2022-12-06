@@ -1,12 +1,10 @@
-package com.bookServer.dao;
+package com.bookServer.source.dao;
 
-import com.commons.bookServer.entity.BookInfo;
-import com.commons.bookServer.entity.model.BookForChapterModel;
+import com.commons.bookServer.entity.bookInfo.BookInfo;
+import com.commons.bookServer.entity.bookChapter.BookForChapterModel;
 import com.github.pagehelper.Page;
-import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.annotations.Param;
-import org.apache.kafka.common.protocol.types.Field;
 
 import java.util.List;
 

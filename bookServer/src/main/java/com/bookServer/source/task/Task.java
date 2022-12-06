@@ -1,8 +1,8 @@
-package com.bookServer.task;
+package com.bookServer.source.task;
 
-import com.bookServer.service.BookInfoSourceService;
-import com.commons.bookServer.entity.model.BookForChapterModel;
-import com.bookServer.service.BookChapterService;
+import com.bookServer.source.service.BookInfoSourceService;
+import com.commons.bookServer.entity.bookChapter.BookForChapterModel;
+import com.bookServer.source.service.BookChapterService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

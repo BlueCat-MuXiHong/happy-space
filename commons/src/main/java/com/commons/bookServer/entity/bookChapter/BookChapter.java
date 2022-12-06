@@ -1,4 +1,4 @@
-package com.commons.bookServer.entity;
+package com.commons.bookServer.entity.bookChapter;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

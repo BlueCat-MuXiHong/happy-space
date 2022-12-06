@@ -1,4 +1,4 @@
-package com.commons.bookServer.entity;
+package com.commons.bookServer.entity.bookType;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class User {
-    private String username;
-    private Integer age;
+public class BookType {
+    private Integer id;
+    private String book_type;
 }

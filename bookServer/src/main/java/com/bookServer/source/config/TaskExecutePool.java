@@ -1,4 +1,4 @@
-package com.bookServer.config;
+package com.bookServer.source.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

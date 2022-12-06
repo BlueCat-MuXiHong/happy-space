@@ -1,4 +1,4 @@
-package com.bookServer.config;
+package com.bookServer.source.config;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;

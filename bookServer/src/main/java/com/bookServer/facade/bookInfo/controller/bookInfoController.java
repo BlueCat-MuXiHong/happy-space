@@ -1,7 +1,7 @@
 package com.bookServer.facade.bookInfo.controller;
 
 import com.bookServer.facade.bookInfo.service.BookInfoService;
-import com.commons.bookServer.entity.BookInfo;
+import com.commons.bookServer.entity.bookInfo.BookInfo;
 import com.commons.bookServer.entity.common.PageInfo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +37,6 @@ public class bookInfoController {
     public PageInfo<BookInfo> getBookInfoList(Integer bookType,Integer pageNo,Integer pageSize){
         return bookInfoService.getBookInfoList(bookType,pageNo,pageSize);
     }
-
 
 
 
