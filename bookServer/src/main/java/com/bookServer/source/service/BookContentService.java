@@ -45,7 +45,7 @@ public class BookContentService {
         return null;
     }
 
-    @Async("test")
+    @Async("test1")
     public BookContent getBookContent(BookChapter bookChapter,int type){
         Document document = null;
         try {

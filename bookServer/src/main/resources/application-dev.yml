@@ -1,3 +1,5 @@
+server:
+  port: 8081
 spring:
   application:
     name: bookServer
@@ -7,16 +9,16 @@ spring:
     username: root
     password: admin
     hikari:
-      pool-name: DateHikariCP
-      minimum-idle: 15
-      idle-timeout: 180000
-      maximum-pool-size: 10000
-      auto-commit: true
-      max-lifetime: 180000
-      connection-timeout: 30000
-      connection-test-query: SELECT 1
+    pool-name: DateHikariCP
+    minimum-idle: 15
+    idle-timeout: 180000
+    maximum-pool-size: 10000
+    auto-commit: true
+    max-lifetime: 180000
+    connection-timeout: 30000
+    connection-test-query: SELECT 1
 
 mybatis:
   configuration:
     map-underscore-to-camel-case: false
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

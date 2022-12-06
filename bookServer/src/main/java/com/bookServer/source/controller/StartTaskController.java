@@ -33,7 +33,7 @@ public class StartTaskController {
 
     @GetMapping("bookContentTask")
     public void bookContentTask() throws Exception {
-        task.bookChapterTask();
+        task.insertEsBookContent();
     }
 
 

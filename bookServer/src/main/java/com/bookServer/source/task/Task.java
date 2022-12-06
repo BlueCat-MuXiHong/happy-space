@@ -1,8 +1,10 @@
 package com.bookServer.source.task;
 
+import com.bookServer.source.service.BookContentService;
 import com.bookServer.source.service.BookInfoSourceService;
 import com.commons.bookServer.entity.bookChapter.BookForChapterModel;
 import com.bookServer.source.service.BookChapterService;
+import com.commons.bookServer.entity.bookInfo.BookInfo;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -30,8 +32,8 @@ public class Task {
     @Autowired
     private BookChapterService bookChapterService;
 //
-//    @Autowired
-//    private BookContentService bookContentService;
+    @Autowired
+    private BookContentService bookContentService;
 
 //    @Scheduled(cron = "*/2 * * * * ?")
     public void bookInfoTask() throws Exception {
@@ -83,17 +85,14 @@ public class Task {
         }
     }
 
-//    public void insertEsBookContent(){
-//        List<BookInfo> allBookInfo = bookInfoService.getAllBookInfo();
-////        for (BookInfo bookInfo : allBookInfo) {
-////            System.out.println(bookInfo);
-////        }
-//        log.info("开始");
-//        for (BookInfo bookInfo : allBookInfo) {
-//            System.out.println(bookInfo.getBook_id()+"----------"+bookInfo.getBook_name()+"------"+bookInfo.getBook_type());
-//            bookContentService.getChapterList(bookInfo);
-//        }
-//    }
+    public void insertEsBookContent(){
+        List<BookInfo> allBookInfo = bookInfoService.getAllBookInfo();
+        log.info("开始");
+        for (BookInfo bookInfo : allBookInfo) {
+            System.out.println(bookInfo.getBook_id()+"----------"+bookInfo.getBook_name()+"------"+bookInfo.getBook_type());
+            bookContentService.getChapterList(bookInfo);
+        }
+    }
 
 
 
