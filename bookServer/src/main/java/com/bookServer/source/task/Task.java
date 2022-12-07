@@ -3,7 +3,7 @@ package com.bookServer.source.task;
 import com.bookServer.source.service.BookContentService;
 import com.bookServer.source.service.BookInfoSourceService;
 import com.commons.bookServer.entity.bookChapter.BookForChapterModel;
-import com.bookServer.source.service.BookChapterService;
+import com.bookServer.source.service.BookChapterSourceService;
 import com.commons.bookServer.entity.bookInfo.BookInfo;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class Task {
     private BookInfoSourceService bookInfoService;
 
     @Autowired
-    private BookChapterService bookChapterService;
+    private BookChapterSourceService bookChapterService;
 //
     @Autowired
     private BookContentService bookContentService;

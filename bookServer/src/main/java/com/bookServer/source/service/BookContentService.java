@@ -30,7 +30,7 @@ public class BookContentService {
     private BookInfoSourceService bookInfoService;
 
     @Autowired
-    private BookChapterService bookChapterService;
+    private BookChapterSourceService bookChapterService;
     @Autowired
     @Qualifier("restHighLevelClient")
     private RestHighLevelClient client;

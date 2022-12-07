@@ -19,7 +19,7 @@ import java.util.List;
 
 @Log4j2
 @Service
-public class BookChapterService {
+public class BookChapterSourceService {
 
     @Autowired
     private BookChapterDao bookChapterDao;

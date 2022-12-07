@@ -31,6 +31,10 @@ public class StartTaskController {
         task.bookChapterTask();
     }
 
+    /**
+     * 添加内容
+     * @throws Exception
+     */
     @GetMapping("bookContentTask")
     public void bookContentTask() throws Exception {
         task.insertEsBookContent();

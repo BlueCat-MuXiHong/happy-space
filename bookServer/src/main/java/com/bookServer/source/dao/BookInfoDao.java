@@ -80,6 +80,6 @@ public interface BookInfoDao {
     @Select("SELECT book_id,book_type,book_url FROM book_info where book_type = #{bookType};")
     List<BookForChapterModel> getAllBookModel(@Param("bookType") Integer bookType);
 
-    @Select("SELECT book_name,book_author,book_type,book_title,book_url,book_img_url FROM book_info where book_type=#{bookType}")
+    @Select("SELECT book_id,book_name,book_author,book_type,book_title,book_url,book_img_url FROM book_info where book_type=#{bookType}")
     Page<BookInfo> getBookInfoListByBookType(@Param("bookType") Integer bookType);
 }
