@@ -22,7 +22,7 @@ public class bookInfoController {
      * @return 图书信息
      */
     @GetMapping("getBookById")
-    public BookInfo getBookById(Integer bookId){
+    public Object getBookById(Integer bookId){
         return bookInfoService.getBookById(bookId);
     }
 
@@ -34,7 +34,7 @@ public class bookInfoController {
      * @return 分页数据
      */
     @GetMapping("getBookInfoList")
-    public PageInfo<BookInfo> getBookInfoList(Integer bookType,Integer pageNo,Integer pageSize){
+    public Object getBookInfoList(Integer bookType,Integer pageNo,Integer pageSize){
         return bookInfoService.getBookInfoList(bookType,pageNo,pageSize);
     }
 

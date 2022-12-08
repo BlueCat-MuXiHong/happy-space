@@ -20,7 +20,7 @@ public class ApiAop {
             return new RestfulEntity(false, e.getCode(), e.getMessage());
         } catch (Exception e) {
             e.printStackTrace();
-            return new RestfulEntity(false, 202, "接口异常，请稍后再试。");
+            return new RestfulEntity(false, 202, e.getMessage());
         }
     }
 }

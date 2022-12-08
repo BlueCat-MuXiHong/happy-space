@@ -71,7 +71,7 @@ public class BookChapterSourceService {
         }
         List<BookChapter> bookChapterList = new ArrayList<>();
         Elements chapterListLis = document.getElementById("stylechapter").getElementsByTag("li");
-        if (chapterListLis.size()>100) {   //判断这本书得章节有没有超过100
+        if (chapterListLis.size()>300) {   //判断这本书得章节有没有超过100
             for (Element li : chapterListLis) {
                 String chapterUrl = baseUrl + li.getElementsByTag("a").attr("href");
                 String chapterName = li.getElementsByTag("a").text();
