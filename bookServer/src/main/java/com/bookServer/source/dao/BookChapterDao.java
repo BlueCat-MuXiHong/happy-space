@@ -16,7 +16,7 @@ public interface BookChapterDao {
 
 
 
-    @Select("SELECT id,book_id,book_chapter_name,book_chapter_ip FROM book_1_chapter WHERE book_id = #{bookId}")
+    @Select("SELECT id,book_id,book_chapter_name,book_chapter_ip FROM bookchapterxuanhuan WHERE book_id = #{bookId}")
     List<BookChapter> getChapterByBookId1(@Param("bookId") Integer bookId);
 
     @Select("SELECT id,book_id,book_chapter_name,book_chapter_ip FROM book_2_chapter WHERE book_id = #{bookId}")
@@ -37,7 +37,7 @@ public interface BookChapterDao {
     @Select("SELECT id,book_id,book_chapter_name,book_chapter_ip FROM book_7_chapter WHERE book_id = #{bookId}")
     List<BookChapter> getChapterByBookId7(@Param("bookId") Integer bookId);
 
-    @Select("SELECT id,book_id,book_chapter_name,book_chapter_ip FROM book_8_chapter WHERE book_id = #{bookId}")
+    @Select("SELECT id,book_id,book_chapter_name,book_chapter_ip FROM bookchapterqita WHERE book_id = #{bookId}")
     List<BookChapter> getChapterByBookId8(@Param("bookId") Integer bookId);
 
     @Insert("insert into chapter_error(book_id,book_url)values(#{book_id},#{book_url}) ")

@@ -34,7 +34,7 @@ public class BookContentService {
     @Autowired
     @Qualifier("restHighLevelClient")
     private RestHighLevelClient client;
-    @Async("test")
+    @Async("test1")
     public Integer getChapterList(BookInfo bookInfo) {
         List<BookChapter> bookChapterByBook = bookChapterService.getBookChapterByBook(bookInfo);
         if (bookChapterByBook.size() != 0) {
