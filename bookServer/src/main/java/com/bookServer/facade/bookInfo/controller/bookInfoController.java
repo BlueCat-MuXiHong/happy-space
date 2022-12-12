@@ -37,9 +37,4 @@ public class bookInfoController {
     public Object getBookInfoList(Integer bookType,Integer pageNo,Integer pageSize){
         return bookInfoService.getBookInfoList(bookType,pageNo,pageSize);
     }
-
-
-
-
-
 }

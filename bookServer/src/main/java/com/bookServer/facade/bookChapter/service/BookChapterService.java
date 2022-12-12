@@ -29,9 +29,9 @@ public class BookChapterService {
      * @return
      * @throws CustomException
      */
-    public PageInfo<BookChapter> getBookChapterByBookId(Integer bookId, Integer pageNo) throws CustomException {
+    public PageInfo<BookChapter> getBookChapterByBookId(Integer bookId, Integer pageNo,Integer pageSize) throws CustomException {
         BookInfo book = bookInfoService.getBookById(bookId);
-        PageHelper.startPage(pageNo, 100);
+        PageHelper.startPage(pageNo, pageSize);
         Page<BookChapter> bookChapterByBookType = this.getBookChapterByBookType(book.getBook_type(), bookId);
         if (bookChapterByBookType.size()==0){
             throw new CustomException(204,"这本图书的还没有100章节，建议养肥了再看发ヾ(≧▽≦*)o");

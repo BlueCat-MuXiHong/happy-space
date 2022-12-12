@@ -26,7 +26,13 @@ public class BookChapterController {
      * @throws CustomException
      */
     @GetMapping("getBookChapterByBookId")
-    public Object getBookChapterByBookId(Integer bookId, Integer pageNo) throws CustomException {
-        return  bookChapterService.getBookChapterByBookId(bookId,pageNo);
+    public Object getBookChapterByBookId(Integer bookId, Integer pageNo,Integer pageSize) throws CustomException {
+        return  bookChapterService.getBookChapterByBookId(bookId,pageNo,pageSize);
     }
+
+
+
+
+
+
 }

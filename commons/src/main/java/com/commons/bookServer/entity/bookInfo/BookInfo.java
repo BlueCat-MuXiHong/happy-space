@@ -15,4 +15,5 @@ public class BookInfo {
     private String book_title;
     private String book_url;
     private String book_img_url;
+    private String book_type_string;
 }

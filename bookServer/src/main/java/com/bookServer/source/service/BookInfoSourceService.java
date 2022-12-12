@@ -108,7 +108,7 @@ public class BookInfoSourceService {
                 title = element.getElementsByClass("book-intro-index").get(0).text().replace("[点击阅读]","");
             }
             Integer type =   Integer.parseInt(url.replace("http://www.kuaishuku.com/list/","").split("-")[0]);
-            BookInfo bookInfo = new BookInfo(null, bookName, author, type, title,baseUrl+bookUrl, baseUrl+imgUrl);
+            BookInfo bookInfo = new BookInfo(null, bookName, author, type, title,baseUrl+bookUrl, baseUrl+imgUrl,bookUrl);
             bookInfoList.add(bookInfo);
 
         }
