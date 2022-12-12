@@ -2,10 +2,15 @@ package com.bookServer.facade.bookType.service;
 
 
 import com.bookServer.facade.bookType.Mapper.BookTypeMapper;
+import com.commons.bookServer.entity.bookType.BookType;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
+/**
+ * bookType service
+ */
 @Service
 public class BookTypeService {
 
@@ -22,6 +27,11 @@ public class BookTypeService {
         return bookTypeMapper.getBookTypeById(id);
     }
 
-
-
+    /**
+     * 获取全部的类型
+     * @return
+     */
+    public List<BookType> getBookTypeList() {
+        return bookTypeMapper.getBookTypeList();
+    }
 }
